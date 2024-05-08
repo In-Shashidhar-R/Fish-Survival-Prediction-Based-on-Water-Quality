@@ -7,7 +7,7 @@ import pandas as pd
 
 def run_fish_survival_predictor():
     # Load data from CSV file
-    df = pd.read_csv("C:\\Users\\INFINIX\\Desktop\\Study\\Semester - 4\\22AIE214 - ROBOTICS\\Endsem - Project\\Codes\\realfishdataset.csv")
+    df = pd.read_csv("Dataset/realfishdataset.csv")
 
     # Encode categorical target variable into integers
     label_encoder = LabelEncoder()
@@ -38,7 +38,7 @@ def run_fish_survival_predictor():
         # Inverse transform the prediction to get original labels
         predicted_label = label_encoder.inverse_transform(prediction)
         # Determine image path based on predicted label
-        image_path = "C:\\Users\\INFINIX\\Desktop\\Study\\Semester - 4\\22AIE214 - ROBOTICS\\Endsem - Project\\Codes\\UI\\Fish\\" + predicted_label[0] + ".jpg"
+        image_path = "Dataset/Fish Images" + predicted_label[0] + ".jpg"
         return predicted_label[0], image_path
 
     # Gradio Interface
